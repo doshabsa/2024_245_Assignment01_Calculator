@@ -1,0 +1,92 @@
+﻿body {
+    /* background colours */
+    --calculator-bg: black;
+    --text-display-bg: lightgrey;
+    --button-bg: darkgray;
+    --op-button-bg: goldenrod;
+    --equals-clear-bg: firebrick;
+    /* text colour */
+    --text: black;
+    /* border colors */
+    --calculator-border: black;
+    --text-display-border: darkgrey;
+    --button-border: gray;
+    --op-button-border: darkgoldenrod;
+    --equals-clear-border: maroon;
+    /* border settings */
+    --border-radius: 15px 15px;
+}
+
+#form1 {
+    
+}
+
+.CalculatorContainer {
+    position: relative;
+    width: 500px;
+    background-color: var(--calculator-bg);
+    border: 10px solid var(--calculator-border);
+    border-radius: var(--border-radius);
+}
+
+.ButtonContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 3px;
+    width: 100%;
+}
+
+#TxtDisplay {
+    width: 100%;
+    height: 75px;
+    font-weight: bold;
+    color: var(--text);
+    background-color: var(--text-display-bg);
+    border: 8px solid var(--text-display-border);
+    border-radius: var(--border-radius);
+}
+
+.Button {
+    width: 24.2%;
+    height: 50px;
+    font-weight: bold;
+    font-size: larger;
+    color: var(--text);
+    background-color: var(--button-bg);
+    border: 8px outset var(--button-border);
+    border-radius: var(--border-radius);
+}
+
+.OpButton {
+    width: 24.2%;
+    height: 50px;
+    font-weight: bold;
+    font-size: larger;
+    color: var(--text);
+    background-color: goldenrod;
+    border: 8px outset darkgoldenrod;
+    border-radius: var(--border-radius);
+}
+
+.Clear {
+    width: 74.3%;
+    height: 50px;
+    font-weight: bold;
+    font-size: larger;
+    color: var(--text);
+    background-color: var(--equals-clear-bg);
+    border: 8px outset var(--equals-clear-border);
+    border-radius: var(--border-radius);
+}
+
+.Equals {
+    width: 49.3%;
+    height: 50px;
+    font-weight: bold;
+    font-size: larger;
+    color: var(--text);
+    background-color: var(--equals-clear-bg);
+    border: 8px outset var(--equals-clear-border);
+    border-radius: var(--border-radius);
+}
