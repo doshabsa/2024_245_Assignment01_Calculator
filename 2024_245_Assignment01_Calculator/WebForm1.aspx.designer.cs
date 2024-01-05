@@ -33,6 +33,15 @@ namespace _2024_245_Assignment01_Calculator
         protected global::System.Web.UI.WebControls.TextBox TxtDisplay;
 
         /// <summary>
+        /// AllClear control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AllClear;
+
+        /// <summary>
         /// Clear control.
         /// </summary>
         /// <remarks>
@@ -42,13 +51,13 @@ namespace _2024_245_Assignment01_Calculator
         protected global::System.Web.UI.WebControls.Button Clear;
 
         /// <summary>
-        /// Divide control.
+        /// Plus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Divide;
+        protected global::System.Web.UI.WebControls.Button Plus;
 
         /// <summary>
         /// Seven control.
@@ -78,13 +87,13 @@ namespace _2024_245_Assignment01_Calculator
         protected global::System.Web.UI.WebControls.Button Nine;
 
         /// <summary>
-        /// Multiply control.
+        /// Minus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Multiply;
+        protected global::System.Web.UI.WebControls.Button Minus;
 
         /// <summary>
         /// Four control.
@@ -114,13 +123,13 @@ namespace _2024_245_Assignment01_Calculator
         protected global::System.Web.UI.WebControls.Button Six;
 
         /// <summary>
-        /// Minus control.
+        /// Multiply control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Minus;
+        protected global::System.Web.UI.WebControls.Button Multiply;
 
         /// <summary>
         /// One control.
@@ -150,22 +159,13 @@ namespace _2024_245_Assignment01_Calculator
         protected global::System.Web.UI.WebControls.Button Three;
 
         /// <summary>
-        /// Plus control.
+        /// Divide control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Plus;
-
-        /// <summary>
-        /// Decimal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Decimal;
+        protected global::System.Web.UI.WebControls.Button Divide;
 
         /// <summary>
         /// Zero control.
@@ -175,6 +175,15 @@ namespace _2024_245_Assignment01_Calculator
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Zero;
+
+        /// <summary>
+        /// Decimal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Decimal;
 
         /// <summary>
         /// Equals control.
