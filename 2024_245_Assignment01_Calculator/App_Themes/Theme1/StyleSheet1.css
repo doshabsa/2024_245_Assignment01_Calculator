@@ -1,24 +1,27 @@
 ﻿body {
     /* background colours */
-    --calculator-bg: black;
-    --text-display-bg: lightgrey;
-    --button-bg: darkgray;
-    --op-button-bg: goldenrod;
-    --equals-clear-bg: firebrick;
+    --main-bg: #15131b;
+    --calculator-bg: #15131b;
+    --text-display-bg: #dcdb8a;
+    --button-bg: #15131b;
     /* text colour */
-    --text: black;
-    /* border colors */
-    --calculator-border: black;
-    --text-display-border: darkgrey;
-    --button-border: gray;
-    --op-button-border: darkgoldenrod;
-    --equals-clear-border: maroon;
+    --text: #dcdb8a;
     /* border settings */
     --border-radius: 15px 15px;
+    --button-radius: 10px;
+    --textbox-radius: 5px;
+    background-color: var(--main-bg);
 }
 
+
+/* 
+    I usually use flexbox, but decided to try grid. screaming ensured.
+    https://unused-css.com/blog/css-outer-glow/
+*/
 #form1 {
-    
+    display: grid;
+    place-items: center;
+    padding: 25px 0px 0px 0px;
 }
 
 .CalculatorContainer {
@@ -28,8 +31,7 @@
     background-color: var(--calculator-bg);
     padding: 10px;
     text-align: center;
-    font-size: xx-large;
-    width: 75%;
+    font-size: x-large;
     border: none;
     border-radius: var(--border-radius);
 }
@@ -38,25 +40,31 @@
         background-color: rgba(255, 255, 255, 0.8);
         width: 100%;
         height: 100%;
-        position: relative;
         border: none;
         border-radius: var(--border-radius);
     }
 
 .textDisplay {
+    display: grid;
+    place-items: center;
     grid-column-start: 1;
     grid-column-end: 5;
     border: none;
+    border-width: 0px;
     border-radius: var(--border-radius);
+    border-color: var(--button-bg);
 }
 
 #TxtDisplay {
+    text-align: center;
     padding: 30px 0px 30px 0px;
-    display: inline-block;
     font-size: xx-large;
+    color: #4898e2;
     width: 100%;
     border: none;
-    border-radius: var(--border-radius);
+    border-radius: var(--button-radius);
+    border-color: var(--button-bg);
+    background-color: var(--calculator-bg);
 }
 
 .allClear {
@@ -72,9 +80,13 @@
     font-size: inherit;
     width: 100%;
     border: none;
-    border-radius: var(--border-radius);
+    border-radius: var(--button-radius);
+    color: var(--text);
+    background-color: var(--button-bg);
 }
 
+/* https://medium.com/@berkaycrk/z-index-in-grid-layout-f6edf9648ea2 */
 .glow-button:hover {
-    box-shadow: 0px 0px 50px rgba(0, 255, 255, 1);
+    z-index: 9999;
+    box-shadow: 0px 0px 50px #7117ff;
 }

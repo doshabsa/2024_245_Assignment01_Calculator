@@ -42,6 +42,7 @@ namespace _2024_245_Assignment01_Calculator
 
         protected void Clear_Click(object sender, EventArgs e)
         {
+            // Add functionality to reset to last stored number on C or all-clear on AC
             TxtDisplay.Text = "0";
         }
     }

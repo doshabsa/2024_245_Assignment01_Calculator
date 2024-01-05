@@ -16,7 +16,7 @@
 
             <!-- row 2 -->
             <div class="allClear">
-                <asp:Button class="Button glow-button" ID="AllClear" runat="server" Text="C" OnClick="Clear_Click" />
+                <asp:Button class="Button glow-button" ID="AllClear" runat="server" Text="AC" OnClick="Clear_Click" />
             </div>
             <div class="clear">
                 <asp:Button class="Button glow-button" ID="Clear" runat="server" Text="C" OnClick="Clear_Click" />
