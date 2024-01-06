@@ -56,6 +56,7 @@
 }
 
 #TxtDisplay {
+    position: relative;
     text-align: center;
     padding: 30px 0px 30px 0px;
     font-size: xx-large;
@@ -75,6 +76,7 @@
 }
 
 .Button {
+    position: relative;
     padding: 30px;
     display: inline-block;
     font-size: inherit;
@@ -83,10 +85,15 @@
     border-radius: var(--button-radius);
     color: var(--text);
     background-color: var(--button-bg);
+    z-index: 999;
 }
 
-/* https://medium.com/@berkaycrk/z-index-in-grid-layout-f6edf9648ea2 */
+/* 
+    https://medium.com/@berkaycrk/z-index-in-grid-layout-f6edf9648ea2
+    https://stackoverflow.com/questions/23067651/how-to-layer-box-shadows-using-z-index
+*/
 .glow-button:hover {
-    z-index: 9999;
+    position: relative;
+    z-index: 0;
     box-shadow: 0px 0px 50px #7117ff;
 }
