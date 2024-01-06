@@ -64,7 +64,7 @@
 
 #TxtDisplay {
     position: relative;
-    text-align: center;
+    text-align: right;
     padding: 30px 15px 30px 15px;
     font-size: xx-large;
     color: var(--midblue);
