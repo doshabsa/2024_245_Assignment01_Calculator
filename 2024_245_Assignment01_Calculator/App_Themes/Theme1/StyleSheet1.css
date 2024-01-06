@@ -1,8 +1,19 @@
-﻿body {
+﻿@font-face {
+    font-family: BlenderBookPro;
+    src: url('/App_Themes/Theme1/Blender-Pro-Book.otf') format('opentype');
+}
+
+@font-face {
+    font-family: TrueLies;
+    src: url('/App_Themes/Theme1/True Lies.ttf') format('truetype');
+}
+
+    body {
     /* border settings */
     --border-radius: 15px 15px;
     --button-radius: 10px;
     --textbox-radius: 5px;
+    --font-size: large;
     /* selected colours */
     --red: rgba(255, 41, 109, 1);
     --lightblue: rgba(5, 217, 232, 1);
@@ -24,8 +35,8 @@
     glow start: https://unused-css.com/blog/css-outer-glow/
     had weird glow effects: https://medium.com/@berkaycrk/z-index-in-grid-layout-f6edf9648ea2
     correct it: https://stackoverflow.com/questions/23067651/how-to-layer-box-shadows-using-z-index
-    artsy font: https://www.dafont.com/true-lies.font
-    i have notes i use but general font import: https://www.digitalocean.com/community/tutorials/how-to-load-and-use-custom-fonts-with-css
+    artsy fonts: https://www.dafont.com/true-lies.font and https://fonts.google.com/specimen/Orbitron
+    I have notes i use but general font import: https://www.digitalocean.com/community/tutorials/how-to-load-and-use-custom-fonts-with-css
 */
 
 #form1 {
@@ -41,7 +52,7 @@
     background-color: var(--dark);
     padding: 10px;
     text-align: center;
-    font-size: x-large;
+    font-size: var(--font-size);
     border-radius: var(--border-radius);
 }
 
@@ -66,9 +77,10 @@
     position: relative;
     text-align: right;
     padding: 30px 15px 30px 15px;
-    font-size: xx-large;
+    font-size: var(--font-size);
+    font-family: TrueLies;
     color: var(--midblue);
-    width: 91%;
+    width: 90%;
     background-color: var(--darkblue);
     color: var(--red);
     border: 5px double var(--lightblue);
@@ -88,16 +100,14 @@
     padding: 30px;
     display: inline-block;
     font-size: inherit;
+    font-family: BlenderBookPro;
     width: 100%;
     border: 1px solid var(--darkblue);
     border-radius: var(--button-radius);
     color: var(--red);
     background-color: var(--dark);
     z-index: 10;
-    transition: box-shadow 0.5s ease-out, 
-        z-index 0.5s ease-out, 
-        border 0.5s ease-out,
-        color 0.5s ease-out;
+    transition: box-shadow 0.5s ease-out, z-index 0.5s ease-out, border 0.5s ease-out, color 0.5s ease-out;
 }
 
     .Button:hover {

@@ -18,7 +18,7 @@ namespace _2024_245_Assignment01_Calculator
          *      ... willl break data table to bee too long of an integer (INT32)
          *  
          *  NOTE:
-         *      This ended up ~2 lines longer than the original version, which included LINQ
+         *      This ended up ~2 lines (of actual code) longer than the original version, which included LINQ
          */
 
         protected void Page_Load(object sender, EventArgs e)
