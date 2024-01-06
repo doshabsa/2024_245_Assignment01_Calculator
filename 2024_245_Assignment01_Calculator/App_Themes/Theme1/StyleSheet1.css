@@ -10,14 +10,25 @@
     --border-radius: 15px 15px;
     --button-radius: 10px;
     --textbox-radius: 5px;
+    /* selected colours */
+    --purple: rgba(72, 152, 226, 1);
+    --blue: rgba(113, 23, 255, 1);
+    --yellow: rgba(220, 219, 138, 1);
+    --dark: rgba(21, 19, 27, 1);
+    /* body properties */
     background-color: var(--main-bg);
 }
 
 
 /* 
     I usually use flexbox, but decided to try grid. screaming ensured.
-    https://unused-css.com/blog/css-outer-glow/
+    glow start: https://unused-css.com/blog/css-outer-glow/
+    had weird glow effects: https://medium.com/@berkaycrk/z-index-in-grid-layout-f6edf9648ea2
+    correct it: https://stackoverflow.com/questions/23067651/how-to-layer-box-shadows-using-z-index
+    artsy font: https://www.dafont.com/true-lies.font
+    i have notes i use but general font import: https://www.digitalocean.com/community/tutorials/how-to-load-and-use-custom-fonts-with-css
 */
+
 #form1 {
     display: grid;
     place-items: center;
@@ -53,19 +64,29 @@
     border-width: 0px;
     border-radius: var(--border-radius);
     border-color: var(--button-bg);
+    box-shadow: 0px 0px 10px var(--purple);
+    transition: box-shadow 1.5s ease-out, z-index 1.5s ease-out;
 }
+
+    .textDisplay:hover {
+        position: relative;
+        z-index: 0;
+        box-shadow: 0px 0px 10px rgba(113, 23, 255, 1);
+    }
+
 
 #TxtDisplay {
     position: relative;
     text-align: center;
     padding: 30px 0px 30px 0px;
     font-size: xx-large;
-    color: #4898e2;
+    color: var(--yellow);
     width: 100%;
     border: none;
     border-radius: var(--button-radius);
     border-color: var(--button-bg);
     background-color: var(--calculator-bg);
+    z-index: 20;
 }
 
 .allClear {
@@ -85,15 +106,12 @@
     border-radius: var(--button-radius);
     color: var(--text);
     background-color: var(--button-bg);
-    z-index: 999;
+    z-index: 10;
+    transition: box-shadow 0.5s ease-out, z-index 0.5s ease-out;
 }
 
-/* 
-    https://medium.com/@berkaycrk/z-index-in-grid-layout-f6edf9648ea2
-    https://stackoverflow.com/questions/23067651/how-to-layer-box-shadows-using-z-index
-*/
-.glow-button:hover {
-    position: relative;
-    z-index: 0;
-    box-shadow: 0px 0px 50px #7117ff;
-}
+    .Button:hover {
+        position: relative;
+        z-index: 0;
+        box-shadow: 0px 0px 50px var(--purple);
+    }
