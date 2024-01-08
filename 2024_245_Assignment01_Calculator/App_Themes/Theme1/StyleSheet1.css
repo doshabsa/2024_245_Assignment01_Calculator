@@ -3,11 +3,6 @@
     src: url('/App_Themes/Theme1/Blender-Pro-Book.otf') format('opentype');
 }
 
-@font-face {
-    font-family: TrueLies;
-    src: url('/App_Themes/Theme1/True Lies.ttf') format('truetype');
-}
-
     body {
     /* border settings */
     --border-radius: 15px 15px;
@@ -78,7 +73,8 @@
     text-align: right;
     padding: 30px 15px 30px 15px;
     font-size: var(--font-size);
-    font-family: TrueLies;
+    font-family: BlenderBookPro;
+    letter-spacing: 2px;
     color: var(--midblue);
     width: 90%;
     background-color: var(--darkblue);
@@ -100,7 +96,6 @@
     padding: 30px;
     display: inline-block;
     font-size: inherit;
-    font-family: BlenderBookPro;
     width: 100%;
     border: 1px solid var(--darkblue);
     border-radius: var(--button-radius);
