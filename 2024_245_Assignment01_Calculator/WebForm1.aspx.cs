@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Web;
@@ -12,7 +13,7 @@ namespace _2024_245_Assignment01_Calculator
     public partial class WebForm1 : System.Web.UI.Page
     {
         private string numbers = "0123456789";
-        private string operands = "=+-*/";
+        private string operators = "=+-*/";
 
         /* 
          *  NOTES:
@@ -29,8 +30,9 @@ namespace _2024_245_Assignment01_Calculator
             if (!IsPostBack)
             {
                 // Establish old string
-                Session["old"] = "0";
-                Session["new"] = null;
+                Session["stored"] = null;
+                Session["input"] = "0";
+                TxtDisplay.Text = "0";
             }
 
             // Display the current old string
@@ -40,75 +42,79 @@ namespace _2024_245_Assignment01_Calculator
         protected void Input(object sender, EventArgs e)
         {
             if (((Button)sender).Text == ".")
-                Session["new"] = AddDecimal(sender);
+                Session["input"] = AddDecimal(sender);
             else
-                Session["new"] = CheckZero(sender);
+                Session["input"] = CheckZero(sender);
 
             // Update the display with the new old string
             Update_Display();
         }
 
-        protected void Opperand(object sender, EventArgs e)
-        {
-            Session["old"] = Session["new"];
-            Session["new"] = "0";
-            Input(sender, e);
-        }
-
         protected string CheckZero(object sender)
         {
             // Check if old is currently 0; likely could narrow this code with a .Trim function
-            if (Session["new"] == null)
-                // Set old string to new input
-                return ((Button)sender).Text;
-            // Add check if an operand is already poldent, calc first then add new operand to string
+            if (Session["input"] is "0")
+            {
+                if (operators.Contains(((Button)sender).Text))
+                    return "0" + ((Button)sender).Text;
+                else
+                    return ((Button)sender).Text;
+            }
             else
                 // Add input to the old string
-                return Session["new"] + ((Button)sender).Text;
+                return Session["input"] + ((Button)sender).Text;
         }
 
         protected string AddDecimal(object sender)
         {
-            if (Session["new"] == null)
+            if (Session["input"] is "0")
                 return "0" + ((Button)sender).Text;
-            else if (!Session["new"].ToString().Contains("."))
-            {
-                if (operands.Contains(Session["new"].ToString().First()))
-                    return Session["new"].ToString() + "0" + ((Button)sender).Text;
-                else
-                    return Session["new"].ToString() + ((Button)sender).Text;
-            }
+            else if (!Session["input"].ToString().Contains("."))
+                return Session["input"].ToString() + ((Button)sender).Text;
             else
-                return Session["new"].ToString();
+                return Session["input"].ToString();
         }
 
         protected void Calculate(object sender, EventArgs e)
         {
-            // Honestly, the most simple way to force a computation without fancy splitting:
-            if (Session["new"] != null && Session["old"] != null)
+            if (Session["stored"] is "0" || Session["stored"] is null)
+                Session["stored"] = PerformCalc(Session["input"].ToString());
+
+            else if (Session["input"] is "0" || Session["input"] is null)
             {
-                DataTable dt = new DataTable();
-                Session["old"] = dt.Compute(Session["old"].ToString() + Session["new"].ToString().ToString(), null).ToString();
-                Session["new"] = null;
+                // No changes to stored
             }
+            else
+                Session["stored"] = PerformCalc(Session["stored"].ToString() + Session["input"].ToString());
+
+
+            Session["input"] = "0";
             Update_Display();
+        }
+
+        protected string PerformCalc(string input)
+        {
+            DataTable dt = new DataTable();
+            return dt.Compute(input, null).ToString();
         }
 
         protected void Clear_Click(object sender, EventArgs e)
         {
             // Reset sessions and display
-            Session["old"] = "0";
-            Session["new"] = null;
-            Update_Display();
+            Session["stored"] = null;
+            Session["input"] = "0";
+            TxtDisplay.Text = Session["input"].ToString();
         }
 
         protected void Update_Display()
         {
             // Update the display
-            if (Session["new"] == null)
-                TxtDisplay.Text = Session["old"].ToString();
+            if (Session["stored"] is null || Session["stored"] is "0")
+                TxtDisplay.Text = Session["input"].ToString();
+            else if (Session["input"] is null || Session["input"] is "0")
+                TxtDisplay.Text = Session["stored"].ToString();
             else
-                TxtDisplay.Text = Session["new"].ToString();
+                TxtDisplay.Text = Session["stored"].ToString() + Session["input"].ToString();
         }
     }
 }
