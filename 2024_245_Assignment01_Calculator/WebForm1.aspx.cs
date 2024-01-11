@@ -98,8 +98,8 @@ namespace _2024_245_Assignment01_Calculator
 
         protected void Clear_Click(object sender, EventArgs e)
         {
-            Session["input"] = "0";
-            Update_Display();
+            Session["input"] = 0;
+            TxtDisplay.Text = Session["stored"].ToString();
         }
 
         protected void Update_Display()
