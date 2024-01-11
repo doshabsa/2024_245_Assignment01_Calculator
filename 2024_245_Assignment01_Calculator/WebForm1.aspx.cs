@@ -19,12 +19,7 @@ namespace _2024_245_Assignment01_Calculator
 
         /* 
          *  NOTES:
-         *      Does not like dealing with NaN
-         *      Occasionally, ONLY if breakpoints are used, will break by coming out of all methods and getting stuck on the global private strings?
-         *      Will break data table if no longer working within INT32
-         *      Will still add if no operand is selected (as in button presses (3 = 3 = 3) == 333)
-         *      
-         *      Previous rendition did allow for continual entry of numbers (met bonus) but would not allow more than one decimal anywhere within that input (1.25 * [no longer may enter a decimal anywhere])
+         *      Does not like dealing with NaN, please be gentle
          */
 
         protected void Page_Load(object sender, EventArgs e)
@@ -37,7 +32,7 @@ namespace _2024_245_Assignment01_Calculator
                 TxtDisplay.Text = "0";
             }
 
-            // Display the current old string
+            // Display the current calculation
             Update_Display();
         }
 
@@ -87,7 +82,7 @@ namespace _2024_245_Assignment01_Calculator
         protected void Calculate(object sender, EventArgs e)
         {
             // I think this had better functionality with the last rendition of the project
-            // Would have preferred to add even more checking, but this quickly snowballs into a lot more QA
+            // Would have preferred to add even more error checking, but this quickly snowballs into a lot more QA
             DataTable dt = new DataTable();
             Session["stored"] = dt.Compute(Session["stored"] + Session["input"].ToString(), null).ToString();
             Session["input"] = "0";
