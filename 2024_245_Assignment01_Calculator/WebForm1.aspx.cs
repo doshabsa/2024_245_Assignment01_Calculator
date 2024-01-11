@@ -80,14 +80,14 @@ namespace _2024_245_Assignment01_Calculator
                     return input;
 
                 default:
-                        return session + input;
+                    return session + input;
             }
         }
 
         protected void Calculate(object sender, EventArgs e)
         {
             // I think this had better functionality with the last rendition of the project
-            // Would have preferred to add even more checking, but this quickly snowballs to more and more QA
+            // Would have preferred to add even more checking, but this quickly snowballs into a lot more QA
             DataTable dt = new DataTable();
             Session["stored"] = dt.Compute(Session["stored"] + Session["input"].ToString(), null).ToString();
             Session["input"] = "0";
@@ -111,7 +111,8 @@ namespace _2024_245_Assignment01_Calculator
         {
             if (Session["stored"].ToString() != "0")
                 TxtDisplay.Text = Session["stored"].ToString() + Session["input"].ToString();
-            TxtDisplay.Text = Session["input"].ToString();
+            else
+                TxtDisplay.Text = Session["input"].ToString();
         }
     }
 }
