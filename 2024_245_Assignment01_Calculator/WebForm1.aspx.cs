@@ -20,6 +20,8 @@ namespace _2024_245_Assignment01_Calculator
         /* 
          *  NOTES:
          *      Does not like dealing with NaN, please be gentle
+         *      I think this had better functionality with the last rendition of the project
+         *      Would have preferred to add even more error checking, but this quickly snowballs into a lot more QA
          */
 
         protected void Page_Load(object sender, EventArgs e)
@@ -81,8 +83,6 @@ namespace _2024_245_Assignment01_Calculator
 
         protected void Calculate(object sender, EventArgs e)
         {
-            // I think this had better functionality with the last rendition of the project
-            // Would have preferred to add even more error checking, but this quickly snowballs into a lot more QA
             DataTable dt = new DataTable();
             Session["stored"] = dt.Compute(Session["stored"] + Session["input"].ToString(), null).ToString();
             Session["input"] = "0";
