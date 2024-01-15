@@ -67,7 +67,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Themes\Theme1\StyleSheet1.css" />
+    <Content Include="App_Themes\Classic\StyleSheet1.css" />
+    <Content Include="App_Themes\Cyberpunk\StyleSheet1.css" />
+    <Content Include="App_Themes\Original\StyleSheet1.css" />
+    <Content Include="App_Themes\Overkill\StyleSheet1.css" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
   </ItemGroup>

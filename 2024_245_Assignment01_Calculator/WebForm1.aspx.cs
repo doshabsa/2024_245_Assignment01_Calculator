@@ -24,6 +24,32 @@ namespace _2024_245_Assignment01_Calculator
          *      Would have preferred to add even more error checking, but this quickly snowballs into a lot more QA
          */
 
+        protected void Page_PreInit(object sender, EventArgs e)
+        {
+            ThemeDropDown.Items.Add("Original");
+            ThemeDropDown.Items.Add("Cyberpunk");
+            ThemeDropDown.Items.Add("Overkill");
+            ThemeDropDown.Items.Add("Classic");
+
+            HttpCookie c = Request.Cookies.Get("KP_ThemeCookie");
+            if (c != null)
+            {
+                if (ThemeDropDown.Items.FindByValue(c.Value) != null)
+                {
+                    Page.Theme = c.Value;
+                    ThemeDropDown.Items.FindByValue(c.Value).Selected = true;
+                }
+            }
+            else
+            {
+                HttpCookie nc = new HttpCookie("KP_ThemeCookie");
+                nc.Expires = DateTime.Now.AddMinutes(5);
+                nc.Value = "Original";
+                Response.Cookies.Add(nc);
+            }
+
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -36,6 +62,16 @@ namespace _2024_245_Assignment01_Calculator
 
             // Display the current calculation
             Update_Display();
+        }
+
+        protected void ThemeDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            HttpCookie c = new HttpCookie("KP_ThemeCookie");
+            c.Expires = DateTime.Now.AddMinutes(5);
+            c.Value = ThemeDropDown.SelectedValue;
+            Response.Cookies.Add(c);
+
+            Page.Response.Redirect(Page.Request.Url.ToString(), true);
         }
 
         protected void Press(object sender, EventArgs e)

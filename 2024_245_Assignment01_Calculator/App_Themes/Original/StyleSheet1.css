@@ -1,9 +1,13 @@
-﻿@font-face {
+﻿/*
+    ORIGINAL
+*/
+
+@font-face {
     font-family: BlenderBookPro;
-    src: url('/App_Themes/Theme1/Blender-Pro-Book.otf') format('opentype');
+    src: url('/App_Themes/Original/Blender-Pro-Book.otf') format('opentype');
 }
 
-    body {
+body {
     /* border settings */
     --border-radius: 15px 15px;
     --button-radius: 10px;
@@ -20,19 +24,10 @@
     --display-glow-radius: 10px;
     /* body properties */
     background-color: var(--dark);
+    font-family: BlenderBookPro;
     margin: 0;
     height: 100%;
 }
-
-
-/* 
-    I usually use flexbox, but decided to try grid. screaming ensured.
-    glow start: https://unused-css.com/blog/css-outer-glow/
-    had weird glow effects: https://medium.com/@berkaycrk/z-index-in-grid-layout-f6edf9648ea2
-    correct it: https://stackoverflow.com/questions/23067651/how-to-layer-box-shadows-using-z-index
-    artsy fonts: https://www.dafont.com/true-lies.font and https://fonts.google.com/specimen/Orbitron
-    I have notes i use but general font import: https://www.digitalocean.com/community/tutorials/how-to-load-and-use-custom-fonts-with-css
-*/
 
 #form1 {
     display: grid;
@@ -57,13 +52,13 @@
         height: 100%;
         border: none;
         border-radius: var(--border-radius);
-            }
+    }
 
 .textDisplay {
     display: grid;
     place-items: center;
     grid-column-start: 1;
-    grid-column-end: 5;    
+    grid-column-end: 5;
     border-radius: var(--border-radius);
     border-color: var(--lightblue);
 }
@@ -73,10 +68,10 @@
     text-align: right;
     padding: 30px 15px 30px 15px;
     font-size: var(--font-size);
-    font-family: BlenderBookPro;
+    font-family: inherit;
     letter-spacing: 2px;
     color: var(--midblue);
-    width: 90%;
+    width: 92%;
     background-color: var(--darkblue);
     color: var(--red);
     border: 5px double var(--lightblue);
@@ -94,6 +89,7 @@
 .Button {
     position: relative;
     padding: 30px;
+    font-family: inherit;
     display: inline-block;
     font-size: inherit;
     width: 100%;
@@ -113,3 +109,10 @@
         color: var(--lightblue);
         overflow: hidden;
     }
+
+#ThemeDropDown {
+    background-color: var(--dark);
+    font-family: inherit;
+    font-size: var(--font-size);
+    color: var(--red);
+}

@@ -1,0 +1,111 @@
+﻿/* 
+    CYBERPUNK
+    https://www.cyberpunk.net/en/build-planner?a=33333&b=&r=&i=&t=&c=&e=
+*/
+
+@font-face {
+    font-family: BlenderBookPro;
+    src: url('/App_Themes/Theme1/Blender-Pro-Book.otf') format('opentype');
+}
+
+body {
+    /* border settings */
+    --border-radius: 15px 15px;
+    --button-radius: 10px;
+    --textbox-radius: 5px;
+    --font-size: large;
+    /* selected colours */
+    --lightred: rgba(215, 67, 93, 1);
+    --darkred: rgba(62, 33, 38, 1);
+    --yellow: rgba(252, 237, 9, 1);
+    --blue: rgba(46, 224, 222, 1);
+    --dark: rgba(8, 12, 17, 1);
+    /* glow properties */
+    --button-glow-radius: 50px;
+    --display-glow-radius: 10px;
+    /* body properties */
+    display: block;
+    margin: 0;
+    height: 100%;
+    background-image: linear-gradient(var(--darkred), var(--dark));
+    background-attachment: fixed;
+}
+
+#form1 {
+    display: grid;
+    place-items: center;
+    padding: 25px 0px 25px 0px;
+}
+
+.CalculatorContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    background-color: transparent;
+    padding: 10px;
+    text-align: center;
+    font-size: var(--font-size);
+    border-radius: var(--border-radius);
+}
+
+    .CalculatorContainer > div {
+        background-color: rgba(255, 255, 255, 0.8);
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-radius: var(--border-radius);
+    }
+
+.textDisplay {
+    display: grid;
+    place-items: center;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    border-radius: var(--border-radius);
+    background-color: transparent;
+}
+
+#TxtDisplay {
+    position: relative;
+    text-align: right;
+    padding: 30px 15px 30px 15px;
+    font-size: x-large;
+    font-weight: bold;
+    letter-spacing: 2px;
+    width: 92%;
+    background-color: var(--yellow);
+    color: var(--dark);
+    border: 0px double var(--blue);
+    border-radius: var(--button-radius);
+    z-index: 20;
+}
+
+.Button {
+    position: relative;
+    padding: 30px;
+    display: inline-block;
+    font-size: inherit;
+    width: 100%;
+    color: var(--blue);
+    border: 1px solid var(--lightred);
+    border-radius: var(--button-radius);
+    background-color: rgb(49, 24, 30);
+    transition: background-color;
+}
+
+    .Button:hover {
+        position: relative;
+        background-color: rgb(64, 31, 39);
+    }
+
+.allClear {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    border: none;
+    border-radius: var(--border-radius);
+}
+
+#ThemeDropDown {
+    background-color: var(--darkred);
+    color: var(--yellow);
+}
