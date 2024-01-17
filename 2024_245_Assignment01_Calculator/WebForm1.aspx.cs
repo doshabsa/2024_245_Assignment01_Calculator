@@ -28,7 +28,7 @@ namespace _2024_245_Assignment01_Calculator
         {
             ThemeDropDown.Items.Add("Original");
             ThemeDropDown.Items.Add("Cyberpunk");
-            ThemeDropDown.Items.Add("Overkill");
+            ThemeDropDown.Items.Add("Stargaze");
             ThemeDropDown.Items.Add("Classic");
 
             HttpCookie c = Request.Cookies.Get("KP_ThemeCookie");
@@ -46,6 +46,7 @@ namespace _2024_245_Assignment01_Calculator
                 nc.Expires = DateTime.Now.AddMinutes(5);
                 nc.Value = "Original";
                 Response.Cookies.Add(nc);
+                Page.Theme = nc.Value;
             }
 
         }

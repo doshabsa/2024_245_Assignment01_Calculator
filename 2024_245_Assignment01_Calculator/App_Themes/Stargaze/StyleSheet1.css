@@ -1,0 +1,122 @@
+﻿/* 
+    STARGAZE
+    https://www.cyberpunk.net/en/build-planner?a=33333&b=&r=&i=&t=&c=&e=
+*/
+
+@font-face {
+    font-family: BlenderBookPro;
+    src: url('/App_Themes/Theme1/Blender-Pro-Book.otf') format('opentype');
+}
+
+body {
+    /* border settings */
+    --border-radius: 35px 35px;
+    --button-radius: 30px;
+    --textbox-radius: 5px;
+    --font-size: large;
+    /* selected colours */
+    --darkpurple: rgb(46, 20, 59);
+    --darkred: rgba(62, 33, 38, 1);
+    --yellow: rgb(66, 62, 131);
+    --blue: rgb(254, 230, 254);
+    --dark: rgba(8, 12, 17, 1);
+    /* glow properties */
+    --button-glow-radius: 50px;
+    --display-glow-radius: 10px;
+    /* body properties */
+    display: block;
+    margin: 0;
+    height: 100%;
+    /* background props */
+    background-color: rgb(4, 2, 7);
+    background-image: url('../Stargaze/nebula.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: right top;
+    background-size: 100% 100%;
+}
+
+#form1 {
+    display: grid;
+    place-items: center;
+    padding: 25px 0px 25px 0px;
+}
+
+.CalculatorContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    text-align: center;
+    font-size: var(--font-size);
+    border-radius: var(--border-radius);
+    background-color: transparent;
+/*    background-image: url('../Stargaze/nebula.jpg');
+    background-size: 100% 100%, cover;*/
+    backdrop-filter: blur(2px);
+    /*box-shadow: 0px 0px 40px 40px rgba(15, 3, 14, 0.2);*/
+}
+
+    .CalculatorContainer > div {
+        background-color: rgba(255, 255, 255, 0.8);
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-radius: var(--border-radius);
+    }
+
+.textDisplay {
+    display: grid;
+    place-items: center;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    border-radius: var(--border-radius);
+    background-color: transparent;
+}
+
+#TxtDisplay {
+    position: relative;
+    text-align: right;
+    padding: 30px 15px 30px 15px;
+    font-size: x-large;
+    font-weight: bold;
+    letter-spacing: 2px;
+    width: 92%;
+    background-color: var(--yellow);
+    color: var(--blue);
+    border: 0px double var(--blue);
+    border-radius: var(--button-radius);
+    z-index: 20;
+}
+
+.Button {
+    position: relative;
+    padding: 30px;
+    display: inline-block;
+    font-size: inherit;
+    width: 100%;
+    color: var(--blue);
+    border: 0px solid var(--darkpurple);
+    border-radius: var(--button-radius);
+    background-color: var(--darkpurple);
+    transition: background-color, box-shadow;
+}
+
+    .Button:hover {
+        position: relative;
+        background-color: rgb(228, 136, 214);
+        box-shadow: inset var(--darkpurple) 0px 0px 50px 15px;
+    }
+
+.allClear {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    border: none;
+    border-radius: var(--border-radius);
+}
+
+#ThemeDropDown {
+    background-color: rgb(1, 1, 3);
+    color: rgb(228, 136, 214);
+}
