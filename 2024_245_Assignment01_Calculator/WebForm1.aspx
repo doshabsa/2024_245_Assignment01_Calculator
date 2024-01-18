@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
         <div class="CalculatorContainer">
-        <asp:DropDownList runat="server" ID="ThemeDropDown" OnSelectedIndexChanged="ThemeDropDown_SelectedIndexChanged"></asp:DropDownList>
+            <asp:DropDownList runat="server" ID="ThemeDropDown" OnSelectedIndexChanged="ThemeDropDown_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
             <!-- row 1 -->
             <div class="textDisplay">
                 <asp:TextBox ID="TxtDisplay" runat="server" ReadOnly="True"></asp:TextBox>

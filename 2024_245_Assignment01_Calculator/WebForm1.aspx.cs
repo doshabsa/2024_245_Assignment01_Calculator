@@ -65,6 +65,7 @@ namespace _2024_245_Assignment01_Calculator
             Update_Display();
         }
 
+        // Make sure set autopost back in designer the dropdown properties
         protected void ThemeDropDown_SelectedIndexChanged(object sender, EventArgs e)
         {
             HttpCookie c = new HttpCookie("KP_ThemeCookie");
